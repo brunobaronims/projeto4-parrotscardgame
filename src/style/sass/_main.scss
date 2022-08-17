@@ -1,0 +1,16 @@
+@use 'globals';
+
+.full-container {
+    display: flex;
+    height: 100vh;
+}
+
+.header-container {
+    width: 100%;
+    display: flex;
+    font: 5rem globals.$header-font;
+    font-weight: 700;
+    color: globals.$header-font-color;
+    justify-content: center;
+    text-align: center;
+}

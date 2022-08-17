@@ -1,0 +1,16 @@
+$card-background-color: #A7E9AF;
+$card-border-color: #99CEA8;
+$background-color: #dfedb5;
+$header-font: 'Roboto', sans-serif;
+$header-font-color: #75B79E;
+
+html, 
+body {
+    margin: 0;
+    padding: 0;
+    background-color: $background-color;
+}
+
+* {
+    box-sizing: border-box;
+}

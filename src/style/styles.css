@@ -1,0 +1,27 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #dfedb5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.full-container {
+  display: flex;
+  height: 100vh;
+}
+
+.header-container {
+  width: 100%;
+  display: flex;
+  font: 5rem "Roboto", sans-serif;
+  font-weight: 700;
+  color: #75B79E;
+  justify-content: center;
+  text-align: center;
+}
+
+/*# sourceMappingURL=styles.css.map */
