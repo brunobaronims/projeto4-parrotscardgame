@@ -14,7 +14,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 5px;
         perspective: 1000px;
 
         .flip-card-inner {
@@ -32,6 +31,7 @@
             -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
             background-color: globals.$card-background-color;
+            border-radius: 0.5rem;
 
             img {
                 height: 100px;
@@ -44,7 +44,7 @@
         }
     }
 
-    //li:hover .flip-card-inner {
-    //    transform: rotateY(-180deg);
-    //}
+    .flipped, .paired {
+        transform: rotateY(-180deg);
+    }
 }
