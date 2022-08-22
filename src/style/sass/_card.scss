@@ -50,7 +50,7 @@
         }
     }
 
-    .flipped, .paired {
+    .peeked, .paired {
         transform: rotateY(-180deg);
     }
 }

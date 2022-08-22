@@ -94,7 +94,7 @@ body {
 .cards-container ul li .flip-card-back {
   transform: rotateY(-180deg);
 }
-.cards-container ul .flipped, .cards-container ul .paired {
+.cards-container ul .peeked, .cards-container ul .paired {
   transform: rotateY(-180deg);
 }
 
