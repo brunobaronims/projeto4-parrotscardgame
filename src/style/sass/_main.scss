@@ -16,11 +16,12 @@
     height: fit-content;
 
     p {
-        margin: 2rem 0;
+        margin: 4rem 0;
         display: flex;
         align-items: center;
         justify-content: center;
         height: fit-content;
+        text-align: center;
     }
 }
 
@@ -29,6 +30,15 @@
     margin-bottom: 5%;
 }
 
-.counter {
-    display: none;
+@media screen and (max-width: 780px) {
+    .header-container {
+        font-size: 3rem;
+        width: initial;
+        margin: 0 1.4rem;
+    }
+
+    .cards-container {
+        height: initial;
+        margin: 0;
+    }
 }

@@ -25,11 +25,12 @@ body {
   height: fit-content;
 }
 .header-container p {
-  margin: 2rem 0;
+  margin: 4rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
   height: fit-content;
+  text-align: center;
 }
 
 .cards-container {
@@ -37,10 +38,17 @@ body {
   margin-bottom: 5%;
 }
 
-.counter {
-  display: none;
+@media screen and (max-width: 780px) {
+  .header-container {
+    font-size: 3rem;
+    width: initial;
+    margin: 0 1.4rem;
+  }
+  .cards-container {
+    height: initial;
+    margin: 0;
+  }
 }
-
 .cards-container ul {
   margin: 0;
   padding: 0 15rem;
@@ -51,7 +59,7 @@ body {
   justify-content: space-around;
 }
 .cards-container ul li {
-  margin-left: 2rem;
+  margin-left: 3rem;
   margin-bottom: 2rem;
   width: 10rem;
   height: 14rem;
@@ -87,6 +95,18 @@ body {
 }
 .cards-container ul .flipped, .cards-container ul .paired {
   transform: rotateY(-180deg);
+}
+
+@media screen and (max-width: 780px) {
+  .cards-container ul {
+    padding: 0;
+    height: initial;
+    flex-direction: column;
+  }
+  .cards-container ul li {
+    margin-left: 0;
+    margin-bottom: 3rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

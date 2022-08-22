@@ -10,7 +10,7 @@
     justify-content: space-around;
 
     li {
-        margin-left: 2rem;
+        margin-left: 3rem;
         margin-bottom: 2rem;    
         width: 10rem;
         height: 14rem;
@@ -51,5 +51,18 @@
 
     .flipped, .paired {
         transform: rotateY(-180deg);
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .cards-container ul {
+        padding: 0;
+        height: initial;
+        flex-direction: column;
+
+        li {
+            margin-left: 0;
+            margin-bottom: 3rem;
+        }
     }
 }
