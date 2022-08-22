@@ -2,7 +2,6 @@
 
 .full-container {
     display: flex;
-    height: 100vh;
     flex-direction: column;
 }
 
@@ -10,9 +9,26 @@
     width: 100%;
     display: flex;
     font: 5rem globals.$header-font;
-    font-weight: 700;
+    font-weight: bolder;
     color: globals.$header-font-color;
     justify-content: center;
-    text-align: center;
-    height: 25%;
+    align-items: center;
+    height: fit-content;
+
+    p {
+        margin: 2rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: fit-content;
+    }
+}
+
+.cards-container {
+    height: 85%;
+    margin-bottom: 5%;
+}
+
+.counter {
+    display: none;
 }

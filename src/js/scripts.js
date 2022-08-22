@@ -1,3 +1,10 @@
+window.onload = (event) => {
+  const cardList = generateCardList();
+  const ul = document.querySelector('ul');
+  shuffle(cardList);
+  setCards(cardList, ul);
+};
+
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1));
@@ -55,10 +62,25 @@ function getClickedCard(event) {
   }
 }
 
+function playAgain() {
+  const resposta = prompt('Você gostaria de jogar novamente?');
+  if (resposta === 'sim') {
+    const ul = document.querySelector('ul');
+    const cardList = generateCardList();
+    document.querySelector('ul').dataset.count = "0";
+    ul.innerHTML = '';
+    shuffle(cardList);
+    setCards(cardList, ul);
+  } else if (resposta === 'não') {
+    return;
+  } else {
+    return playAgain();
+  }
+}
+
 function flipCard(event) {
   const card = getClickedCard(event);
   if (card.className != 'flip-card-inner flipped' && card.className != 'flip-card-inner paired' && card.tagName != 'LI') {
-    console.log(card);
     const uniqueCards = Array.from(document.getElementsByClassName('flipped'));
     const pairedCards = Array.from(document.getElementsByClassName('paired'));
     const flippedCards = uniqueCards.concat(pairedCards);
@@ -68,25 +90,26 @@ function flipCard(event) {
     })
     if (flippedCards.length % 2 === 0 && pairedCards.length >= flippedCards.length - 1) {
       card.classList.add('flipped');
-    } else if (pairedCards.length === flippedCards.length - 1){
+      document.querySelector('ul').dataset.count++;
+    } else if (pairedCards.length === flippedCards.length - 1) {
       if (flippedGifs.includes(card.innerHTML)) {
+        let count = document.querySelector('ul').dataset.count;
+        count++;
         uniqueCards.forEach((Card, index) => {
           uniqueCards[index].classList.add('paired');
           uniqueCards[index].classList.remove('flipped');
         })
         card.classList.add('paired');
+        if (Array.from(document.querySelectorAll('li')).length - 2 === pairedCards.length) {
+          alert(`Você ganhou em ${count} jogadas!`);
+          playAgain();
+        }
       } else {
         card.classList.add('flipped');
-        setTimeout(() => {card.classList.remove('flipped')}, 1000);
-        setTimeout(() => {flippedCards.forEach(Card =>{Card.classList.remove('flipped')})}, 1000);
+        setTimeout(() => { card.classList.remove('flipped') }, 1000);
+        setTimeout(() => { flippedCards.forEach(Card => { Card.classList.remove('flipped') }) }, 1000);
+        document.querySelector('ul').dataset.count++;
       }
     }
   }
 }
-
-window.onload = (event) => {
-  const cardList = generateCardList();
-  shuffle(cardList);
-  const ul = document.querySelector('ul');
-  setCards(cardList, ul);
-};

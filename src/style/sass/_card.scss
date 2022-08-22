@@ -2,18 +2,20 @@
 
 .cards-container ul {
     margin: 0;
-    padding: 0;
+    padding: 0 15rem;
     display: flex;
-    justify-content: center;
+    height: 100%;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: space-around;
 
     li {
-        width: 117px;
-        height: 146px;
+        margin-left: 2rem;
+        margin-bottom: 2rem;    
+        width: 10rem;
+        height: 14rem;
         background-color: transparent;
         display: flex;
-        align-items: center;
-        justify-content: center;
         perspective: 1000px;
 
         .flip-card-inner {
@@ -32,10 +34,13 @@
             backface-visibility: hidden;
             background-color: globals.$card-background-color;
             border-radius: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
             img {
-                height: 100px;
-                width: 100px;
+                height: 9rem;
+                width: 9rem;
             }
         }
 
